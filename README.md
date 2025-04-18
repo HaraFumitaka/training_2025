@@ -10,5 +10,5 @@
 # 第５章　Angularについて
 [詳細リンク](./chapter5.md)
 
-[!Tip]
+>[!TIP]
 ここにTIPSを
