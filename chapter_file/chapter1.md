@@ -18,6 +18,9 @@ install
 - VS code (Visual Studio code)
   - [Qitaリンク](https://qiita.com/qrrq/items/0e116a59743874d18cb1)を参考に拡張機能をインストール
   - [Qitaリンク](https://qiita.com/papi_tokei/items/c639dc7d1e0f5ad68a74)を参考にVS codeの設定
+  >[!Tip]
+  codeコマンドを打ちたい場合VScodeの検索バーで`>shell command`と打ちinstallするというボタンをクリックすると使用できるようになる。
+
 
 Check
 --
