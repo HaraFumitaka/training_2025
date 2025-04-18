@@ -5,3 +5,7 @@
 [詳細リンク](./chapter2.md)
 # 第３章 OS（Linux）ネットワーク
 [詳細リンク](./chapter3.md)
+# 第４章　TypeScriptについて
+[詳細リンク](./chapter4.md)
+# 第５章　Angularについて
+[詳細リンク](./chapter5.md)
