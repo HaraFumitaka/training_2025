@@ -1,0 +1,27 @@
+version: '3' #Docker-composeのバージョンを指定します
+
+services: #起動するコンテナごとに一つのサービスを定義します。
+  db: #dbという名前をつけてサービスを定義します
+    image: mysql:5.7 #イメージの指定
+    volumes: #パスをボリュームとしてマウントします(ホスト側:コンテナ側のように記載します)
+      - db_data:/var/lib/mysql
+    restart: always #再起動ポリシーの設定(alwaysだとコンテナが停止すると常に再起動します)
+    environment: #環境変数の設定を行います。
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  wordpress:
+    depends_on: #サービス間の依存関係を指定します(起動するときはdb→wordpress、停止のときは逆順となります)
+      - db
+    image: wordpress:latest
+    ports: #ポートを公開します（ホスト:コンテナで記載します.コンテナのみを指定した場合はホストはランダムに設定されます）
+      - "8000:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+volumes: #ボリュームの設定db_dataという名前のボリュームが定義されます。
+  db_data:
