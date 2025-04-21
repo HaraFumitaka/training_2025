@@ -71,8 +71,8 @@ ToDo
        ```
        volta -v
        ```
-       >[!Tip]
-       `volta -v`が効かない場合はターミナルを再起動すれば解決する。
+  >[!Tip]
+  >`volta -v`が効かない場合はターミナルを再起動すれば解決する。
     2. Node.js
        - nodeをinstallする
        ```
@@ -95,7 +95,7 @@ ToDo
        yarn -v
        pnpm -v
        ```
-    4.パッケージマネージャ
+    4. パッケージマネージャ
     npm,yarm,pnpmのコマンドが統一される
     - install
       ```
@@ -105,7 +105,7 @@ ToDo
       ```
       ni -v
       ```
-    5.TypeScript
+    5. TypeScript
     - install
       ```
       ni -g typescript
@@ -114,7 +114,7 @@ ToDo
       ```
       tsc -v
       ```
-    6.Webpack環境構築
+    6. Webpack環境構築
     このまま開発するとJSにコンパイルした場合typescriptでエラーメッセージが表示される
     **概要** : ２つのモジュールを一つにする
 
@@ -124,4 +124,19 @@ ToDo
       ```
     - webpackの詳細設定
       - webpack.config.jsを作成
-      - 
+        - entrypoint作成
+        - output指定
+        - mode
+        - resolve
+        - devServer
+        - module
+    - tfconfig.jsonの設定
+      - 作成する
+      ```
+      ni tsc --init
+      ```
+      - コメントアウトを外していく
+        - すでにされているtarget
+          - JSのバージョンを指定する
+        - 詳細は調べる
+    7. Classを作成
