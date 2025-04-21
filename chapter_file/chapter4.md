@@ -140,3 +140,11 @@ ToDo
           - JSのバージョンを指定する
         - 詳細は調べる
     7. Classを作成
+    - クラスを作成、インスタンス化させる
+    - bundleを機能させる
+      - webpack
+      - bundle.jsを作成
+      ```
+      npm run build
+      ```
+

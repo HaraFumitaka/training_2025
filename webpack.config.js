@@ -8,6 +8,7 @@ module.exports = {
         path: `${__dirname}/dist`,
         filename: "[name].js"
     },
+    // productionモードは圧縮された形
     mode: "development",
     resolve: {
         extensions: [".ts", ".js"],
