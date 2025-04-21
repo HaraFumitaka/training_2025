@@ -70,7 +70,12 @@ ToDo
       docker run -it --name [任意の名前をいれる] ubuntu:22.04 /bin/bash
       ```
  3. Vimでファイルを作成
-    chapter3と同様であるため省略
+    - vimをinstallする
+    ```
+    apt-get update
+    apt-get install vim
+    ```
+    - chapter3と同様であるため省略
  4. ホストOSで作ったファイルをコンテナ内で確認する
    - ホストOSごとにのディレクトリをコンテナに提供する(コンテナ作成し直し)
    ```
@@ -146,6 +151,7 @@ ToDoで行っているため省略
 
 5.Ubuntu公式イメージを元にカスタマイズして、オリジナルのイメージを作成
 --
+[参考Qita](https://qiita.com/S4nTo/items/977d28b0eac316915702)
    1. Dockerの種類
       - Dockerfile
         - 概要
@@ -173,8 +179,74 @@ ToDoで行っているため省略
       - Dockerfileを作成
       - DockerfileからDockerイメージの作成
       ```
-      docker image build -t example_image:1.0 [Dockerfileのパス]
+      docker image build -t [任意の名前image] [Dockerfileのパス]
       ```
+      - Dockerコンテナを起動して中に入る
+      ```
+      docker run -it --name [任意の名前をいれる] [任意の名前image] /bin/bash
+      ```
+>[!Tip]
+>Dockerfileパスは現在のディレクトリの場合[.]のみ
    3. Docker Composeの建て方
-6.プロセスという概念の調査
+      - compose.ymlファイルを作成
+      - Docker composeをビルド
+        ```
+        docker-compose build
+        ```
+      - Docker composeを起動
+        ```
+        docker-compose up -d
+        ```
+6.Dockerコマンド
 --
+コンテナ
+- コンテナの一覧を表示
+```
+docker container ls -a
+```
+- コンテナの起動???
+```
+docker container run -- name [任意の名前] [Imageの名前]
+```
+- コンテナの停止
+```
+docker container stop [コンテナの名前]
+```
+- 停止中のコンテナの起動
+```
+docker container start [コンテナの名前]
+```
+>[!Tip]
+>停止中のものは起動して、入らなければならない
+- コンテナに入る
+```
+docker exec -it [コンテナの名前] /bin/bash
+```
+- 起動中のコンテナの再起動
+```
+docker container restart [コンテナの名前]
+```
+- コンテナの削除
+```
+docker container rm [コンテナの名前]
+```
+
+Compose
+- コンテナの停止
+```
+docker compose stop
+```
+- コンテナの再起動
+```
+docker compose start
+```
+
+7.プロセスという概念の調査
+--
+dockerのプロセス
+Dockerでコンテナを起動すると、コンテナ内で起動するプロセスはdockeredの子プロセスとして起動する
+プロセス：実行中のプログラム
+例
+- 同時に起動する
+  - フロントエンドサーバー
+  - バックエンドサーバー

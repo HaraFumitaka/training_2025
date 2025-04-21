@@ -1,5 +1,3 @@
-version: '3' #Docker-composeのバージョンを指定します
-
 services: #起動するコンテナごとに一つのサービスを定義します。
   db: #dbという名前をつけてサービスを定義します
     image: mysql:5.7 #イメージの指定
