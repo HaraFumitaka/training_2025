@@ -1,7 +1,7 @@
 module.exports = {
     // entryポイントの作成
     entry: {
-        bundle: "./src/index.ts"
+        bundle: "./src/sample.ts"
     },
     // __dirname:current ディレクトリ
     output: {
