@@ -147,4 +147,5 @@ ToDo
       ```
       npm run build
       ```
-
+    8. TypeScriptを実践
+    [とほほのTypeScript入門](https://www.tohoho-web.com/ex/typescript.html)
